@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UE Election 2026</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="vote.js"></script>
+  <script src="admin.js"></script>
+</head>
+
+<body>
+  <div class="container">
+
+    <!-- LOGIN SECTION -->
+    <div id="loginSection" class="section active">
+
+      <img src="logo.jpeg" alt="School Logo" class="logo">
+
+      <h3>Login</h3>
+
+      <input type="email" id="email" placeholder="School Email">
+      <input type="password" id="password" placeholder="Password">
+
+      <button onclick="login()">Login</button>
+
+    </div>
+
+    <!-- VOTING SECTION -->
+    <div id="voteSection" class="section">
+
+      <img src="logo.jpeg" alt="logo.png" class="logo">
+
+      <p class="warning">⚠ ONLY SCHOOL OF SCIENCE STUDENTS CAN VOTE</p>
+
+      
+      <h3>Voter Details</h3>
+
+      <input type="text" id="admission" placeholder="Admission Number">
+      <input type="text" id="name" placeholder="Full Name">
+
+      <select id="course">
+        <option value="">Select Course</option>
+        <option value="Bachelor of Science (B.Sc.)">Bachelor of Science (B.Sc.)</option>
+        <option value="B.Sc Analytical Chemistry with Computing">B.Sc Analytical Chemistry with Computing</option>
+        <option value="B.Sc Microbiology">B.Sc Microbiology</option>
+        <option value="B.Sc Biotechnology and Biosafety">B.Sc Biotechnology and Biosafety</option>
+        <option value="B.Sc Biochemistry">B.Sc Biochemistry</option>
+        <option value="B.Sc Applied Statistics with Computing">B.Sc Applied Statistics with Computing</option>
+        <option value="B.Sc Computer Science">B.Sc Computer Science</option>
+        <option value="B.Sc Actuarial Science">B.Sc Actuarial Science</option>
+        <option value="B.Sc Informatics">B.Sc Informatics</option>
+      </select>
+
+      <h3>Select Candidate</h3>
+
+      <div class="candidates">
+
+        <div class="candidate">
+          <img src="chalse.jpg">
+          <h4>Chalse Ouma</h4>
+          <button onclick="vote('Chalse Ouma')">Vote</button>
+        </div>
+
+        <div class="candidate">
+          <img src="Tuju.jpeg">
+          <h4>Antone Tuju</h4>
+          <button onclick="vote('Antone Tuju')">Vote</button>
+        </div>
+
+        <div class="candidate">
+          <img src="cand3.jpg">
+          <h4>Candidate 3</h4>
+          <button onclick="vote('Candidate 3')">Vote</button>
+        </div>
+
+        <div class="candidate">
+          <img src="cand4.jpg">
+          <h4>Candidate 4</h4>
+          <button onclick="vote('Candidate 4')">Vote</button>
+        </div>
+
+        <div class="candidate">
+          <img src="cand5.jpg">
+          <h4>Candidate 5</h4>
+          <button onclick="vote('Candidate 5')">Vote</button>
+        </div>
+
+      </div>
+
+      <button onclick="showAdmin()"
+        style="background-color: red; color: white; border: none; padding: 10px 20px; margin-top: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.3); border-radius: 5px;">Admin
+        Access</button>
+
+    </div>
+    <!-- ADMIN SECTION -->
+     
+    <div id="adminSection" class="section">
+      <div id="adminLogin">
+        <img src="logo.jpeg" alt="School Logo" class="logo">
+        <h2>Admin Login</h2>
+        <input type="password" id="adminPass" placeholder="Enter Admin Password">
+        <button onclick="loginAdmin()">Login</button>
+      </div>
+
+      <div id="adminDashboard" style="display:none;">
+        <img src="logo.jpeg" alt="School Logo" class="logo">
+        <h2>Admin Dashboard</h2>
+        <p>Total Votes: <span id="adminTotalVotes">0</span></p>
+        <div id="voteList"></div> <canvas id="adminBarChart"></canvas>
+        <canvas id="adminPieChart"></canvas>
+        <button onclick="logoutAdmin()">Logout</button>
+      </div>
+    </div>
+
+</html>

@@ -1,0 +1,181 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(black, white, #00a651);
+  min-height: 100vh;
+}
+
+/* ADMIN SECTION */
+#adminSection input,
+#adminSection button {
+  margin: 10px 0;
+}
+
+.logo {
+  display: block;
+  margin: 0 auto 15px auto;
+  /* center + spacing */
+  width: 180px;
+  /* desktop size */
+  max-width: 100%;
+  /* prevents overflow */
+  height: auto;
+  /* keeps proportions */
+  object-fit: contain;
+  /* prevents stretching */
+}
+
+/* For larger screens */
+@media (min-width: 768px) {
+  .logo {
+    width: 220px;
+  }
+}
+
+/* For small phones */
+@media (max-width: 480px) {
+  .logo {
+    width: 140px;
+  }
+}
+
+#adminSection canvas {
+  max-width: 100%;
+  margin: 15px 0;
+}
+
+/* HEADER */
+header {
+  background: black;
+  color: white;
+  text-align: center;
+  padding: 15px;
+}
+
+header .logo {
+  width: 70px;
+}
+
+/* MAIN CONTAINER */
+.container {
+  width: 90%;
+  max-width: 500px;
+  margin: 20px auto;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* SECTIONS */
+.section {
+  display: none;
+  animation: fadeIn 0.5s ease;
+}
+
+.section.active {
+  display: block;
+}
+
+/* INPUTS */
+input,
+select {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+/* BUTTONS */
+button {
+  width: 100%;
+  padding: 12px;
+  background: #00a651;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #007a45;
+}
+
+/* WARNING */
+.warning {
+  color: red;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* CANDIDATES */
+.candidates {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.candidate {
+  width: 120px;
+  text-align: center;
+}
+
+.candidate img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 3px solid #00a651;
+}
+
+.candidate h4 {
+  margin: 5px 0;
+}
+
+/* SUCCESS SCREEN */
+.success {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: black;
+  color: white;
+  text-align: center;
+  flex-direction: column;
+}
+
+/* MOBILE */
+@media(max-width:600px) {
+
+  .container {
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  h2 {
+    font-size: 16px;
+  }
+
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
